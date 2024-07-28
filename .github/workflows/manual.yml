@@ -43,12 +43,16 @@ jobs:
         working-directory: ./android/
         run: ./gradlew bundle
 
+      - name: ls
+        run: |
+          ls
+          pwd
+
       - name: Upload APK
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
           name: app-dev
           path: |
-            ${{ github.workspace }}/packages/app/android/app/build/outputs/bundle/release/*.aab
             ${{ github.workspace }}/packages/app/android/app/build/outputs/apk/release/*.apk
             ${{ github.workspace }}/packages/app/android/app/build/outputs/apk/debug/*.apk
 
