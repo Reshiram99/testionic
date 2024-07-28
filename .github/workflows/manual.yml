@@ -47,12 +47,16 @@ jobs:
         run: |
           ls
           pwd
+          cd android
+          ls
+          cd app
+          ls
+          cd build
+          ls
 
       - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
           name: app-dev
-          path: |
-            ${{ github.workspace }}/android/app/build/outputs/apk/release/*.apk
-            ${{ github.workspace }}/android/app/build/outputs/apk/debug/*.apk
+          path: /android/
 
