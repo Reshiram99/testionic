@@ -1,0 +1,9 @@
+:host  ion-thumbnail{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    & ::ng-deep img{
+        width: auto;
+    }
+}

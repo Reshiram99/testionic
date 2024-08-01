@@ -1,17 +1,53 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      <ion-thumbnail>
+        <img alt="App logo" src="/assets/cxm.svg" />
+      </ion-thumbnail>
     </ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="secondary-header" data-is-rounded-shadow="true" class="text-center font-small">
+    <h2 id="nasuSubHeading">Profile Settings</h2>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+<ion-content [fullscreen]="false">
+  <ion-list class="profile-settings">
+    @for (item of keys; track $index) {
+      <ion-item-group >
+        <ion-item-divider class="pt-3" mode="md">
+          <h2 class="primary-sub-heading mt-3 mb-2" :id="'subHeader' + index">{{item}}</h2>
+        </ion-item-divider>
+        @for (subItem of getSubKeys(item); track $index) {
+          <ion-item >
+            <ion-label class="labelClass" >{{subItem.label || subItem.labelKey}} 
+              @if (subItem.showBadgeValue) {
+                <ion-badge mode="ios" color="danger" class="align-middle ml-1">
+                    5
+                </ion-badge>
+              }
+            </ion-label>
+            
+            @if(subItem.toggle){
+              <ion-toggle ref="bioToggle"
+              slot="end"
+              name="isBioEnable"></ion-toggle>
+            }@else {
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            }
+          </ion-item>
+        }
+      </ion-item-group>
+    }
+    </ion-list>
 </ion-content>
+<ion-footer>
+  <div class="ion-padding pb-4">
+    <ion-button v-if="!isLogoutClicked" fill="outline" expand="block" class="ion-no-margin my-2 singleBtn" 
+        id="logOutBtn">
+        Logout
+    </ion-button>
+  <div class="font-muted font-small text-right font-italic">App version: 1.0.0</div>
+  </div>
+</ion-footer>
+
