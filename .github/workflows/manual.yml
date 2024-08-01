@@ -53,10 +53,12 @@ jobs:
           ls
           cd build
           ls
+          cd outputs/apk/debug
+          ls
 
       - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
           name: app-dev
-          path: /android/
+          path: android
 
