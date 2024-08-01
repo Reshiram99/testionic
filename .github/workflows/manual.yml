@@ -53,7 +53,7 @@ jobs:
           ls
           cd build
           ls
-          cd outputs/apk/debug
+          cd outputs
           ls
 
       - name: Upload APK
