@@ -1,6 +1,8 @@
 name: Build Android
 
 on: workflow_dispatch
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -43,22 +45,20 @@ jobs:
         working-directory: ./android/
         run: ./gradlew assembleDebug
 
-      - name: ls
-        run: |
-          ls
-          pwd
-          cd android
-          ls
-          cd app
-          ls
-          cd build
-          ls
-          cd outputs
-          ls
-
       - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
           name: app-dev
           path: android/app/build/outputs
+
+      - name: Increase version
+        run: npm version patch
+
+      - name: commit & push changes
+        run: |
+          git config --global user.name 'reshiram99'
+          git config --global user.email 'reshiram99@users.noreply.github.com'
+          git commit -am "Version update"
+          git push
+        
 
