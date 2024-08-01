@@ -1,0 +1,8 @@
+<ion-card (click)="openActionSheet(data())"  class="ion-activatable ripple-parent ">
+  <img alt="{{data().id}}" src="{{data().images.small}}" />
+  <ion-card-header>
+    <ion-card-title>{{data().name}}</ion-card-title>
+    <ion-card-subtitle>{{data().id}}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-ripple-effect ></ion-ripple-effect>
+</ion-card>

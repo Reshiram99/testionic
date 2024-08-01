@@ -1,0 +1,7 @@
+@if (showLoad()) {
+  <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+}
+@else {
+  <div>Data loaded for time : {{time()}}</div>
+}
+

@@ -1,0 +1,150 @@
+{
+    "PERSONAL DETAILS": [
+        {
+            "labelKey": "secureInboxHeader",
+            "route": "/secure-inbox",
+            "featureFlag": "secureInbox_enabled",
+            "showBadgeValue":true
+        },
+        {
+            "label": "Contact Information",
+            "labelKey": "contactInformationProfileLink",
+            "route": "/contact-information"
+        },
+        {
+            "label": "Account Nicknames & Icons",
+            "labelKey": "accountNicknameAndIconProfileLink",
+            "route": "/account/account-nickname",
+            "featureFlag": "useIconNickname"
+        },
+        {
+            "label": "Beneficiaries",
+            "labelKey": "beneficiariesProfileLink",
+            "route": "/account/beneficiaries",
+            "featureFlag": "beneficiaries.view"
+        }
+    ],
+    "SECURITY PROFILE": [
+        {
+            "label": "Change Username",
+            "labelKey": "changeUsernameProfileLink",
+            "route": "username-update"
+        },
+        {
+            "label": "Change Password",
+            "labelKey": "changePasswordProfileLink",
+            "route": "update-password"
+        },
+        {
+            "label": "Update Security Information",
+            "labelKey": "updateSecurityInformationProfileLink",
+            "route": "/update-2fa-add",
+            "featureFlag": "contactInformation.2faMethodUpdate"
+        },
+        {
+            "label": "Enable Biometric Authentication",
+            "labelKey": "bioAuthProfileLink",
+            "route": "",
+            "featureFlag": "bioAuth",
+            "toggle": true
+        },
+        {
+            "label": "Delete Online Access",
+            "labelKey": "deleteOnlineAccess",
+            "route": "/delete-online-access",
+            "featureFlag": "showDeleteOnlineAccessLink"
+        }
+    ],
+    "ACCOUNT SERVICES": [
+        {
+            "label": "Bank Maintenance",
+            "labelKey": "bankMaintenanceProfileLink",
+            "route": "/bank-view",
+            "featureFlag": "bankMaintenance"
+        },
+        {
+            "label": "Distribution Options",
+            "labelKey": "distributionOptionsProfileLink",
+            "route": "/account/distribution-option",
+            "featureFlag": "distributionOptions.view"
+        },
+        {
+            "label": "Dealer Information",
+            "labelKey": "dealerInformationProfileLink",
+            "route": "/account/dealer",
+            "featureFlag": "enable-view-dealer"
+        },
+        {
+            "label": "Statement & Forms",
+            "labelKey": "statementsAndFormsProfileLink",
+            "route": "/statements",
+            "featureFlag": "statements"
+        },
+        {
+            "label": "Cost Basis Method",
+            "labelKey": "costBasisMethodProfileLink",
+            "route": "/account/view-cost-basis",
+            "featureFlag": "costBasis"
+        }
+    ],
+    "AUTOMATICS": [
+        {
+            "labelKey": "automaticInvestmentPageHeader",
+            "route": "/automatic/automatic-investment",
+            "featureFlag": "automatics-investment-enabled"
+        },
+        {
+            "labelKey": "automaticRedemptionPageHeader",
+            "route": "/automatic/automatic-redemption",
+            "featureFlag": "automatics-redemption-enabled"
+        },
+        {
+            "labelKey": "automaticExchangePageHeader",
+            "route": "/automatic/automatic-exchange",
+            "featureFlag": "automatics-exchange-enabled"
+        }
+    ],
+    "DELIVERY PREFERENCES": [
+        {
+            "label": "eDelivery Preferences",
+            "labelKey": "eDeliveryProfileLink",
+            "route": "/edelivery",
+            "featureFlag": "donotCollectConsent",
+            "featureFlagValue": false,
+            "nonTaxableSecondaryRestricted": true
+        }
+    ],
+    "LEGAL": [
+        {
+            "label": "Terms and Conditions",
+            "labelKey": "termsAndConditionLink",
+            "route": "",
+            "isModal": true
+        },
+        {
+            "label": "Privacy Policy",
+            "labelKey": "privacyPolicyLink",
+            "route": "/privacy-policy-logged-in"
+        }
+    ],
+    "SUPPORT": [
+        {
+            "labelKey": "accessibilityStatementHeader",
+            "route": "/accessibility",
+            "featureFlag": "accessibilityPageEnabled"
+        },
+        {
+            "labelKey": "glossaryHeader",
+            "route": "/glossary",
+            "featureFlag": "glossaryPageEnabled"
+        },
+        {
+            "label": "Contact Us",
+            "labelKey": "contactusProfileLink",
+            "externalLinkKey": "labels.contact",
+            "alertMsgKey": "redirectOutOfAppConactUsMsg",
+            "okBtnKey": "redirectOutOfAppConactUsOkBtn",
+            "cancelBtnKey": "redirectOutOfAppConactUsCancelBtn"
+        }
+    ]
+}

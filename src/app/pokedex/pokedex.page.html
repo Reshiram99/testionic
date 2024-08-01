@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Pokedex
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  @if (store.pokedex()) {
+    <!-- @if(getResponse()()){ -->
+
+    @for (data of store.pokedex()?.data; track $index) {
+      <!-- @for (data of getResponse()()?.data; track $index) { -->
+      
+        <app-poke-view [data]="data"></app-poke-view>
+        
+    }
+  
+    <ion-fab slot="fixed" horizontal="center" vertical="bottom">
+      <ion-fab-button>
+        <ion-icon name="filter-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="top">
+        <ion-fab-button (click)="pageSize.set(10)">
+           10
+        </ion-fab-button>
+        <ion-fab-button (click)="pageSize.set(20)">
+          20
+       </ion-fab-button>
+       <ion-fab-button (click)="pageSize.set(30)">
+        30
+        </ion-fab-button>
+      </ion-fab-list>
+      <ion-fab-list side="end">
+        <ion-fab-button (click)="store.nextPage();">
+          <ion-icon name="chevron-forward"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+        <ion-fab-list side="start">
+          <ion-fab-button (click)="store.prevPage()">
+            <ion-icon name="chevron-back"></ion-icon>
+          </ion-fab-button>
+        </ion-fab-list>
+    </ion-fab>
+    
+  }
+  @else {
+    <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+  }
+
+  
+
+</ion-content>
