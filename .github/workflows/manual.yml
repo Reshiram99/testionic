@@ -1,7 +1,8 @@
 name: Build Android
 
 on: workflow_dispatch
-
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -36,9 +37,6 @@ jobs:
 
       - name: Build Android Dev APK
         run: ionic capacitor build android
-
-      - name: Build Android Release APK
-        run: ionic capacitor build android --release --prod
 
       - name: Generate the Android App Bundle
         working-directory: ./android/
